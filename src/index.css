@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Properties ─────────────────────────────── */
+:root {
+  --color-navy-50:  #f0fdf4;
+  --color-navy-100: #dcfce7;
+  --color-navy-200: #bbf7d0;
+  --color-navy-300: #86efac;
+  --color-navy-400: #4ade80;
+  --color-navy-500: #22c55e;
+  --color-navy-600: #16a34a;
+  --color-navy-700: #16994a;
+  --color-navy-800: #12863f;
+  --color-navy-900: #0c5c2c;
+  --color-navy-950: #052e16;
+
+  --color-navy: #12863f;
+  --color-gold: #d4a828;
+  --color-maroon: #8b1a1a;
+  --color-cream: #FAF8F3;
+  --color-parchment: #F5F0E8;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-ui: "DM Sans", system-ui, sans-serif;
+}
+
+/* ── Base Styles ───────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-cream);
+  color: #2c2c3e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* ── Gold Rule Ornament ────────────────────────────── */
+.gold-rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), #e8c96a);
+  border-radius: 2px;
+}
+
+.gold-rule-full {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* ── Section Header ────────────────────────────────── */
+.section-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* ── Grain Texture Overlay ─────────────────────────── */
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ── Article Abstract Typography ───────────────────── */
+.abstract-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #3a3a4a;
+}
+
+/* ── Card hover border animation ──────────────────── */
+.card-border-anim {
+  position: relative;
+  border-left: 3px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.card-border-anim:hover {
+  border-left-color: var(--color-gold);
+}
+
+/* ── Announcement Bar ──────────────────────────────── */
+.announce-bar {
+  background: var(--color-navy);
+  color: rgba(255,255,255,0.8);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(212,168,40,0.3);
+}
+
+/* ── Nav Dropdown ──────────────────────────────────── */
+.nav-dropdown {
+  transform-origin: top center;
+  animation: dropIn 0.18s ease-out forwards;
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Focus visible (WCAG 2.2) ──────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Custom Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-parchment); }
+::-webkit-scrollbar-thumb { background: rgba(18,134,63,0.3); border-radius: 3px; }
+
+/* ── Print Styles ──────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* ── Staggered animation delays ───────────────────── */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ── Brand Green Theme — navy-* overrides ──────────── */
+/* Background */
+.bg-navy-50  { background-color: #f0fdf4; }
+.bg-navy-100 { background-color: #dcfce7; }
+.bg-navy-200 { background-color: #bbf7d0; }
+.bg-navy-300 { background-color: #86efac; }
+.bg-navy-400 { background-color: #4ade80; }
+.bg-navy-500 { background-color: #22c55e; }
+.bg-navy-600 { background-color: #16a34a; }
+.bg-navy-700 { background-color: #16994a; }
+.bg-navy-800 { background-color: #12863f; }
+.bg-navy-900 { background-color: #0c5c2c; }
+.bg-navy-950 { background-color: #052e16; }
+
+/* Text */
+.text-navy-50  { color: #f0fdf4; }
+.text-navy-100 { color: #dcfce7; }
+.text-navy-200 { color: #bbf7d0; }
+.text-navy-300 { color: #86efac; }
+.text-navy-400 { color: #4ade80; }
+.text-navy-500 { color: #22c55e; }
+.text-navy-600 { color: #16a34a; }
+.text-navy-700 { color: #16994a; }
+.text-navy-800 { color: #12863f; }
+.text-navy-900 { color: #0c5c2c; }
+.text-navy-950 { color: #052e16; }
+
+/* Border */
+.border-navy-50  { border-color: #f0fdf4; }
+.border-navy-100 { border-color: #dcfce7; }
+.border-navy-200 { border-color: #bbf7d0; }
+.border-navy-300 { border-color: #86efac; }
+.border-navy-400 { border-color: #4ade80; }
+.border-navy-500 { border-color: #22c55e; }
+.border-navy-600 { border-color: #16a34a; }
+.border-navy-700 { border-color: #16994a; }
+.border-navy-800 { border-color: #12863f; }
+.border-navy-900 { border-color: #0c5c2c; }
+.border-navy-950 { border-color: #052e16; }
+
+/* Hover backgrounds */
+.hover\:bg-navy-50:hover  { background-color: #f0fdf4; }
+.hover\:bg-navy-100:hover { background-color: #dcfce7; }
+.hover\:bg-navy-600:hover { background-color: #16a34a; }
+.hover\:bg-navy-700:hover { background-color: #16994a; }
+.hover\:bg-navy-800:hover { background-color: #12863f; }
+.hover\:bg-navy-900:hover { background-color: #0c5c2c; }
+
+/* Hover text */
+.hover\:text-navy-300:hover { color: #86efac; }
+.hover\:text-navy-700:hover { color: #16994a; }
+.hover\:text-navy-800:hover { color: #12863f; }
+.hover\:text-navy-900:hover { color: #0c5c2c; }
+
+/* Hover border */
+.hover\:border-navy-400:hover { border-color: #4ade80; }
+
+/* Focus ring */
+.focus\:ring-navy-400:focus { --tw-ring-color: #4ade80; }
+.focus\:border-navy-400:focus { border-color: #4ade80; }
+
+/* Divide */
+.divide-navy-100 > :not([hidden]) ~ :not([hidden]) { border-color: #dcfce7; }
+
+/* Opacity variants */
+.bg-navy-50\/40  { background-color: rgba(240, 253, 244, 0.4); }
+.bg-navy-700\/50 { background-color: rgba(22, 153, 74, 0.5); }
+.bg-navy-900\/50 { background-color: rgba(12, 92, 44, 0.5); }
