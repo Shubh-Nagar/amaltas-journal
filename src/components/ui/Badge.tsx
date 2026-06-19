@@ -16,7 +16,7 @@ export default function Badge({ children, variant = 'navy', className, size = 's
         {
           'bg-navy-100 text-navy-800': variant === 'navy',
           'bg-gold-100 text-gold-800': variant === 'gold',
-          'bg-navy-100 text-navy-800': variant === 'green',
+          'bg-green-100 text-green-800': variant === 'green',
           'bg-maroon-100 text-maroon-800': variant === 'maroon',
           'bg-gray-100 text-gray-700': variant === 'gray',
         },

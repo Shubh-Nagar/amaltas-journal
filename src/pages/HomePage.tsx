@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/home/HeroSection';
 import JournalMetrics from '../components/home/JournalMetrics';
 // import FeaturedArticles from '../components/home/FeaturedArticles';

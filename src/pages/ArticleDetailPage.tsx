@@ -29,7 +29,7 @@ export default function ArticleDetailPage() {
         <FileText className="w-16 h-16 text-gray-300 mb-4" />
         <h1 className="font-playfair text-2xl text-gray-900 mb-2">Article Not Found</h1>
         <p className="text-gray-500 mb-6">The article you are looking for does not exist or has been moved.</p>
-        <Button to="/issues" variant="primary">Browse All Issues</Button>
+        <Button href="/issues" variant="primary">Browse All Issues</Button>
       </div>
     );
   }
@@ -201,7 +201,7 @@ export default function ArticleDetailPage() {
                 <span className="block w-1 h-6 bg-gold-400 rounded-full" />
                 Cite This Article
               </h2>
-              <CitationBox citation={article.citation} />
+              <CitationBox citation={article.citation} doi={article.doi} />
             </section>
 
             {/* Disclaimer note */}

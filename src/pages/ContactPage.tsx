@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ChevronRight, Mail, Phone, MapPin, Clock, CheckCircle2,
+  ChevronRight, Mail, MapPin, Clock, CheckCircle2,
   BookOpen, Users, Building2, Send,
 } from 'lucide-react';
 
@@ -122,11 +122,6 @@ export default function ContactPage() {
                 <a href={`mailto:${c.email}`} className="flex items-center gap-1.5 text-xs text-navy-600 hover:underline break-all">
                   <Mail className="w-3.5 h-3.5 shrink-0" />{c.email}
                 </a>
-                {c.phone && (
-                  <a href={`tel:${c.phone}`} className="flex items-center gap-1.5 text-xs text-navy-600 hover:underline mt-1">
-                    <Phone className="w-3.5 h-3.5" />{c.phone}
-                  </a>
-                )}
                 {c.note && <p className="text-xs text-amber-700 bg-amber-50 rounded-lg p-2 mt-3">{c.note}</p>}
               </div>
             ))}
