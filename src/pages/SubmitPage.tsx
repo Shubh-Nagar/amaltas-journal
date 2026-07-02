@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ChevronRight, CheckCircle2, FileText, AlertCircle,
-  Upload, ChevronDown, ChevronUp,
+  Upload, ChevronDown, ChevronUp, Mail,
 } from 'lucide-react';
 
 type ArticleTypeOpt = { label: string; desc: string; wordCount: string };
@@ -129,15 +129,25 @@ export default function SubmitPage() {
             </div>
           </section>
 
-          {/* ── Submission Form ── */}
+          {/* ── Submission Form (temporarily disabled — submissions are handled via email) ── */}
           <section>
             <h2 className="font-playfair text-2xl text-gray-900 mb-2">Online Submission Form</h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm text-center">
+              <Mail className="w-10 h-10 text-navy-700 mx-auto mb-4" />
+              <p className="text-sm text-gray-600 max-w-md mx-auto">
+                If you would like to submit a manuscript, kindly mail your manuscript and cover letter to{' '}
+                <a href="mailto:editor@ijrhm.com" className="text-navy-700 font-semibold underline hover:text-navy-900">
+                  editor@ijrhm.com
+                </a>.
+              </p>
+            </div>
+            {/*
             <p className="text-sm text-gray-500 mb-6">
               Complete the form below. Fields marked <span className="text-red-500">*</span> are required.
             </p>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm space-y-5">
 
-              {/* Corresponding author */}
+              {/* Corresponding author *}
               <fieldset>
                 <legend className="font-semibold text-navy-800 text-sm mb-3">Corresponding Author</legend>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -153,7 +163,7 @@ export default function SubmitPage() {
 
               <hr className="border-gray-100" />
 
-              {/* Manuscript info */}
+              {/* Manuscript info *}
               <fieldset>
                 <legend className="font-semibold text-navy-800 text-sm mb-3">Manuscript Details</legend>
                 <div className="space-y-4">
@@ -197,7 +207,7 @@ export default function SubmitPage() {
 
               <hr className="border-gray-100" />
 
-              {/* File upload mock */}
+              {/* File upload mock *}
               <fieldset>
                 <legend className="font-semibold text-navy-800 text-sm mb-3">File Upload</legend>
                 <div className="border-2 border-dashed border-navy-200 rounded-xl p-8 text-center hover:border-navy-400 transition-colors cursor-pointer bg-navy-50/40">
@@ -209,7 +219,7 @@ export default function SubmitPage() {
 
               <hr className="border-gray-100" />
 
-              {/* Declarations */}
+              {/* Declarations *}
               <fieldset>
                 <legend className="font-semibold text-navy-800 text-sm mb-3">Author Declarations</legend>
                 <div className="space-y-3">
@@ -245,6 +255,7 @@ export default function SubmitPage() {
                 Submit Manuscript
               </button>
             </div>
+            */}
           </section>
 
           {/* FAQ */}

@@ -10,7 +10,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     country: 'India',
     role: 'editor-in-chief',
     expertise: ['Global Health Policy', 'Social Epidemiology', 'Health Systems Research'],
-    email: 'editor@ajhes.amaltas.edu.in',
+    email: 'editor@ijrhm.com',
   },
   {
     id: 'eb-002',

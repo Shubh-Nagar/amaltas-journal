@@ -60,13 +60,13 @@ export default function Footer() {
             <div className="space-y-2 text-sm font-ui text-white/55">
               <div className="flex items-center gap-2">
                 <Mail size={13} className="text-gold-400 flex-shrink-0" aria-hidden="true" />
-                <a href="mailto:editor@ijrhm.amaltas.edu.in" className="hover:text-gold-400 transition-colors">
-                  editor@ijrhm.amaltas.edu.in
+                <a href="mailto:contactus@ijrhm.com" className="hover:text-gold-400 transition-colors">
+                  contactus@ijrhm.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={13} className="text-gold-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <span>Amaltas University, India — 462 023</span>
+                <span>Village Bangar, Dewas–Ujjain Highway, District Dewas, MP 455001</span>
               </div>
             </div>
           </div>
@@ -100,6 +100,7 @@ export default function Footer() {
           </div>
 
           {/* Indexing */}
+          {/*
           <div>
             <h3 className="font-ui text-xs font-semibold uppercase tracking-widest text-gold-400 mb-4">Indexed In</h3>
             <ul className="space-y-2.5">
@@ -110,12 +111,13 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            {/* <div className="mt-6 pt-4 border-t border-navy-700">
+            <div className="mt-6 pt-4 border-t border-navy-700">
               <p className="font-ui text-xs text-navy-500">Impact Factor</p>
               <p className="font-display text-2xl text-white font-semibold">3.82</p>
               <p className="font-ui text-xs text-navy-500 mt-0.5">CiteScore 2024</p>
-            </div> */}
+            </div>
           </div>
+          */}
         </div>
       </div>
 

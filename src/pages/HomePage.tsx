@@ -2,7 +2,7 @@ import HeroSection from '../components/home/HeroSection';
 import JournalMetrics from '../components/home/JournalMetrics';
 // import FeaturedArticles from '../components/home/FeaturedArticles';
 import LatestIssueSection from '../components/home/LatestIssueSection';
-import MostRead from '../components/home/MostRead';
+// import MostRead from '../components/home/MostRead';
 import CallToAction from '../components/home/CallToAction';
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
       <JournalMetrics />
       {/* <FeaturedArticles /> */}
       <LatestIssueSection />
-      <MostRead />
+      {/* <MostRead /> */}
       <CallToAction />
     </>
   );

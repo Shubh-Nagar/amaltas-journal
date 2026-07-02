@@ -23,7 +23,7 @@ export default function LatestIssueSection() {
             {/* Issue cover */}
             <div className="relative rounded-xl overflow-hidden border border-navy-200 shadow-card mb-5">
               <img
-                src="/journal-front-page.jpeg"
+                src="/journal-front-page.jpg"
                 alt={`IJRHM Volume ${latest.volume}, Issue ${latest.issue} cover`}
                 className="w-full aspect-[3/4] object-cover object-top"
               />

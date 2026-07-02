@@ -170,9 +170,20 @@ export default function ArticleDetailPage() {
                 <span className="block w-1 h-6 bg-gold-400 rounded-full" />
                 Abstract
               </h2>
-              <p className="text-gray-700 leading-relaxed font-lora text-[0.97rem]">
-                {article.abstract}
-              </p>
+              {article.structuredAbstract ? (
+                <div className="space-y-3">
+                  {article.structuredAbstract.map((part) => (
+                    <p key={part.label} className="text-gray-700 leading-relaxed font-lora text-[0.97rem]">
+                      <span className="font-semibold text-navy-800">{part.label}: </span>
+                      {part.text}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-700 leading-relaxed font-lora text-[0.97rem]">
+                  {article.abstract}
+                </p>
+              )}
             </section>
 
             {/* Keywords */}
@@ -194,6 +205,76 @@ export default function ArticleDetailPage() {
                 ))}
               </div>
             </section>
+
+            {/* Full text */}
+            {article.sections && article.sections.length > 0 && (
+              <section className="mb-8">
+                <h2 className="font-playfair text-xl text-gray-900 mb-5 flex items-center gap-2">
+                  <span className="block w-1 h-6 bg-gold-400 rounded-full" />
+                  Full Text
+                </h2>
+                <div className="space-y-7">
+                  {article.sections.map((sec) => (
+                    <div key={sec.heading}>
+                      <h3 className="font-playfair text-lg text-navy-800 mb-2.5">{sec.heading}</h3>
+                      <div className="space-y-3">
+                        {sec.paragraphs.map((p, i) => (
+                          <p key={i} className="text-gray-700 leading-relaxed font-lora text-[0.97rem]">
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                      {sec.tables?.map((table, ti) => (
+                        <div key={ti} className="mt-4 overflow-x-auto">
+                          {table.caption && (
+                            <p className="text-sm font-semibold text-navy-800 mb-2">{table.caption}</p>
+                          )}
+                          <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                            <thead>
+                              <tr className="bg-navy-50">
+                                {table.headers.map((h) => (
+                                  <th key={h} className="text-left font-semibold text-navy-800 px-3 py-2 border-b border-gray-200">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {table.rows.map((row, ri) => (
+                                <tr key={ri} className="odd:bg-white even:bg-gray-50">
+                                  {row.map((cell, ci) => (
+                                    <td key={ci} className="px-3 py-2 border-b border-gray-100 text-gray-700">
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* References */}
+            {article.references && article.references.length > 0 && (
+              <section className="mb-8">
+                <h2 className="font-playfair text-xl text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="block w-1 h-6 bg-gold-400 rounded-full" />
+                  References
+                </h2>
+                <ol className="space-y-2 list-decimal list-outside pl-5">
+                  {article.references.map((ref, i) => (
+                    <li key={i} className="text-gray-700 leading-relaxed font-lora text-[0.9rem]">
+                      {ref}
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
 
             {/* Citation */}
             <section className="mb-8">
@@ -250,12 +331,15 @@ export default function ArticleDetailPage() {
                 <BookMarked className="w-4 h-4" />
                 Add to Reading List
               </button>
+              {/*
               <div className="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-500 text-center">
                 {article.downloadCount.toLocaleString('en-IN')} downloads
               </div>
+              */}
             </div>
 
             {/* Quick stats */}
+            {/*
             <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
               <h3 className="font-playfair text-lg text-gray-900 mb-4">Article Metrics</h3>
               <div className="space-y-3">
@@ -274,6 +358,7 @@ export default function ArticleDetailPage() {
                 ))}
               </div>
             </div>
+            */}
 
             {/* Share */}
             <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
@@ -304,6 +389,7 @@ export default function ArticleDetailPage() {
             </div>
 
             {/* Corresponding Author */}
+            {/*
             {correspondingAuthor && correspondingAuthor.email && (
               <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
                 <h3 className="font-playfair text-lg text-gray-900 mb-3">Correspondence</h3>
@@ -318,6 +404,7 @@ export default function ArticleDetailPage() {
                 </a>
               </div>
             )}
+            */}
 
             {/* Issue link */}
             <div className="bg-navy-800 text-white rounded-2xl p-5">

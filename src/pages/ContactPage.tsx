@@ -193,9 +193,20 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* ── Contact Form ──────────────────────────────── */}
+        {/* ── Contact Form (temporarily disabled — inquiries are handled via email) ── */}
         <section>
           <h2 className="font-playfair text-2xl text-gray-900 mb-6">Send a Message</h2>
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm text-center">
+            <Mail className="w-10 h-10 text-navy-700 mx-auto mb-4" />
+            <p className="text-sm text-gray-600 max-w-md mx-auto">
+              Kindly mail us at{' '}
+              <a href="mailto:editor@ijrhm.com" className="text-navy-700 font-semibold underline hover:text-navy-900">
+                editor@ijrhm.com
+              </a>{' '}
+              for any inquiries.
+            </p>
+          </div>
+          {/*
           {sent ? (
             <div className="bg-navy-50 border border-navy-200 rounded-2xl p-8 text-center">
               <CheckCircle2 className="w-14 h-14 text-navy-700 mx-auto mb-3" />
@@ -254,6 +265,7 @@ export default function ContactPage() {
               </p>
             </div>
           )}
+          */}
         </section>
 
       </div>

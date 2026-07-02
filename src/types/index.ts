@@ -37,6 +37,23 @@ export interface Citation {
   bibtex: string;
 }
 
+export interface AbstractSection {
+  label: string;
+  text: string;
+}
+
+export interface ArticleTable {
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface ArticleSection {
+  heading: string;
+  paragraphs: string[];
+  tables?: ArticleTable[];
+}
+
 export interface Article {
   id: string;
   doi: string;
@@ -44,6 +61,9 @@ export interface Article {
   shortTitle?: string;
   authors: Author[];
   abstract: string;
+  structuredAbstract?: AbstractSection[];
+  sections?: ArticleSection[];
+  references?: string[];
   keywords: string[];
   articleType: ArticleType;
   accessType: AccessType;

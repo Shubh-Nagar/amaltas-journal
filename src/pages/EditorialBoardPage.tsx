@@ -46,8 +46,9 @@ function MemberCard({ member }: { member: EditorialBoardMember }) {
               <span title={member.country} className="text-lg">{FLAG[member.country]}</span>
             )}
           </div>
-          <p className="text-xs text-gray-500 mb-1">{member.title}</p>
-          <p className="text-xs text-gray-600 leading-snug">{member.institution}</p>
+          {/* Qualification is hidden for all cards */}
+          {/* {isLeader && <p className="text-xs text-gray-500 mb-1">{member.title}</p>} */}
+          {isLeader && <p className="text-xs text-gray-600 leading-snug">{member.institution}</p>}
           <p className="text-xs text-gray-400">{member.country}</p>
         </div>
       </div>
@@ -59,14 +60,18 @@ function MemberCard({ member }: { member: EditorialBoardMember }) {
         </span>
       </div>
 
-      {/* Expertise */}
-      <div className="px-5 pb-4 flex flex-wrap gap-1.5 mt-1 flex-1">
-        {member.expertise.map((tag) => (
-          <span key={tag} className="text-[11px] bg-navy-50 text-navy-600 border border-navy-100 rounded-full px-2 py-0.5">
-            {tag}
-          </span>
-        ))}
-      </div>
+      {/* Expertise (field of specialisation) is hidden for all cards */}
+      {/*
+      {isLeader && (
+        <div className="px-5 pb-4 flex flex-wrap gap-1.5 mt-1 flex-1">
+          {member.expertise.map((tag) => (
+            <span key={tag} className="text-[11px] bg-navy-50 text-navy-600 border border-navy-100 rounded-full px-2 py-0.5">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+      */}
 
       {/* Contact */}
       {(member.email || member.profileUrl) && (
