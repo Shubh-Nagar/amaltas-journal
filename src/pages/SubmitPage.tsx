@@ -17,8 +17,8 @@ const ARTICLE_TYPES: ArticleTypeOpt[] = [
 
 const FAQ = [
   { q: 'Are there article processing charges?', a: 'No. IJRHM is a Diamond Open Access journal. There are no submission fees or APCs for any author, from any country.' },
-  { q: 'Can I submit a preprint?', a: 'Yes. We welcome submissions previously posted on recognised preprint servers (bioRxiv, medRxiv, SSRN, Research Square). Please declare this in your cover letter and include the preprint DOI.' },
-  { q: 'What reference format does IJRHM use?', a: 'APA 7th edition. In-text citations follow the author–date format. A reference management template is available in our Supplementary Files.' },
+  { q: 'Can I submit a preprint?', a: 'Yes. We welcome submissions previously posted on recognised preprint servers (bioRxiv, medRxiv, SSRN, Research Square). Please declare this in your cover letter and include a link to the preprint.' },
+  { q: 'What reference format does IJRHM use?', a: 'Vancouver style. In-text citations are numbered consecutively in the order they appear. A reference management template is available in our Supplementary Files.' },
   { q: 'Do you accept submissions in languages other than English?', a: 'Manuscripts must be submitted in English. We strongly encourage authors to use professional language-editing services if English is not their first language.' },
   { q: 'What is the typical time from submission to first decision?', a: 'Our target is 21 days from submission to first editorial decision (post desk review). We aim to publish accepted articles online within 15 days of final acceptance.' },
   { q: 'Can I suggest peer reviewers?', a: 'Yes. You may suggest up to four potential reviewers (name, affiliation, email) with no competing interests. You may also list reviewers you wish to exclude, with reasons.' },
@@ -290,8 +290,7 @@ export default function SubmitPage() {
               { label: 'No APCs', sub: 'Free for all authors' },
               { label: '21 days', sub: 'Average to first decision' },
               { label: 'Online-first', sub: '15 days post-acceptance' },
-              { label: 'CC BY 4.0', sub: 'Open access licence' },
-              { label: 'APA 7th', sub: 'Reference format' },
+              { label: 'Vancouver', sub: 'Reference format' },
             ].map(({ label, sub }) => (
               <div key={label} className="py-2.5 border-b border-navy-700 last:border-0">
                 <p className="font-semibold text-gold-400 text-sm">{label}</p>

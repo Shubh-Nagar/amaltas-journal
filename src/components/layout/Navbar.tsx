@@ -67,10 +67,6 @@ export default function Navbar() {
       <div className="announce-bar hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-white/70 text-xs font-ui">
-            <span>ISSN (Print): <strong className="text-white/90">2582-7341</strong></span>
-            <span className="text-white/30">|</span>
-            <span>ISSN (Online): <strong className="text-white/90">2582-7352</strong></span>
-            <span className="text-white/30">|</span>
             <span>Amaltas University Press</span>
           </div>
           <a

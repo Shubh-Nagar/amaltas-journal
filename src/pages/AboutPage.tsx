@@ -74,7 +74,7 @@ export default function AboutPage() {
             <p>
               IJRHM employs a rigorous <strong>double-blind peer review</strong> process. All manuscripts are assessed
               for scope, originality, and methodological soundness before being sent to a minimum of two independent
-              subject-matter experts drawn from our international reviewer panel of 20+ scholars in 4 countries.
+              subject-matter experts drawn from our international reviewer panel of 20+ scholars.
             </p>
           </div>
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-6 space-y-3">
             {[
-              { title: 'Plagiarism Detection', desc: 'All submissions are screened with iThenticate. Similarity index above 20% requires author explanation.' },
+              { title: 'Plagiarism Detection', desc: 'All submissions are screened with iThenticate. Similarity index of 10% is not acceptable.' },
               { title: 'Data Availability', desc: 'Authors are encouraged to share research data in public repositories (Zenodo, Figshare, OSF). Data availability statements are mandatory.' },
               { title: 'Conflict of Interest', desc: 'All authors, reviewers, and editors must disclose any financial or personal relationships that could influence the work.' },
               { title: 'Informed Consent & IRB', desc: 'Human-subjects research must include IRB/Ethics Committee approval details and evidence of informed consent.' },
@@ -190,7 +190,7 @@ export default function AboutPage() {
             <p>
               Articles accepted for publication are made available online under an <strong>Ahead of Print</strong> model
               before their formal issue assignment. These articles are considered fully published upon online posting
-              and may be cited and quoted immediately, using the article's <strong>DOI</strong> as the reference source.
+              and may be cited and quoted immediately.
             </p>
             <p>
               In accordance with responsible publishing standards, changes will not be made to an Ahead of Print article

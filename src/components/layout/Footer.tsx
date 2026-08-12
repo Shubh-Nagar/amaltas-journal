@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { BookOpen, Mail, MapPin } from 'lucide-react';
 
 const journalLinks = [
   { label: 'About the Journal', to: '/about' },
@@ -126,18 +126,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-ui text-white/40 text-xs text-center md:text-left">
             © {new Date().getFullYear()} Amaltas University Press. All rights reserved.
-            &nbsp;|&nbsp; ISSN 2582-7341 (Print) &nbsp;|&nbsp; ISSN 2582-7352 (Online)
           </p>
           <div className="flex items-center gap-4">
-            <a
-              href="https://creativecommons.org/licenses/by/4.0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 font-ui text-xs text-white/45 hover:text-white/70 transition-colors"
-            >
-              <span className="border border-white/20 rounded px-1.5 py-0.5 text-white/55">CC BY 4.0</span>
-              <ExternalLink size={10} aria-hidden="true" />
-            </a>
             <a
               href="https://amaltas.edu.in"
               target="_blank"

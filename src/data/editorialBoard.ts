@@ -32,6 +32,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     role: 'managing-editor',
     expertise: ['Research Methodology', 'Biostatistics', 'Health Survey Design'],
     email: 'ustiwarigwalior@gmail.com',
+    cvUrl: '/us-tiwari-cv-brief-2025.pdf',
   },
   {
     id: 'eb-004',
@@ -112,16 +113,6 @@ export const editorialBoard: EditorialBoardMember[] = [
     country: 'India',
     role: 'national-editorial-committee',
     expertise: ['Water Resources Management', 'Hydrology', 'Climate Adaptation'],
-  },
-  {
-    id: 'eb-012',
-    name: 'Dr. U.S. Tyagi',
-    title: 'MD, DPH',
-    affiliation: 'All India Institute of Medical Sciences, Bhopal',
-    institution: 'AIIMS Bhopal',
-    country: 'India',
-    role: 'national-editorial-committee',
-    expertise: ['Community Medicine', 'Tribal Health', 'Rural Health Systems'],
   },
   {
     id: 'eb-013',

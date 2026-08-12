@@ -29,64 +29,36 @@ const ARTICLE_TYPES = [
   {
     type: 'Original Research Article',
     words: '3,000–5,000',
-    abstract: 'Structured (250 words)',
-    tables: 'Max 5',
-    figures: 'Max 8',
-    refs: 'Max 50',
     desc: 'Includes randomized controlled trials, prospective and retrospective observational studies, interventional studies, cross-sectional surveys, qualitative studies, and quality-of-life studies relating to rural health and medicine.',
   },
   {
     type: 'Systematic Review / Meta-Analysis',
     words: '5,000–8,000',
-    abstract: 'Structured (300 words)',
-    tables: 'Max 5',
-    figures: 'Max 8',
-    refs: 'Max 100',
     desc: 'Comprehensive synthesis of existing evidence following PRISMA or MOOSE reporting guidelines. A PRISMA flow diagram is mandatory. Pre-registration on PROSPERO or a similar registry is strongly encouraged; the registration number must be stated.',
   },
   {
     type: 'Case Report / Case Series',
     words: '1,500–3,000',
-    abstract: 'Unstructured (150 words)',
-    tables: 'Max 2',
-    figures: 'Max 4',
-    refs: 'Max 20',
     desc: 'Reports a unique patient, community, or programme case that adds to existing knowledge. Must follow CARE guidelines. A case series must include a minimum of three and a maximum of ten cases addressing the same scenario. Patient informed consent is mandatory.',
   },
   {
     type: 'Commentary / Perspective',
     words: '1,000–2,000',
-    abstract: 'Unstructured (150 words)',
-    tables: 'Max 2',
-    figures: 'Max 2',
-    refs: 'Max 20',
     desc: 'Evidence-based expert opinion on a current public health issue, policy gap, or research challenge. Authors should present a clearly argued original position grounded in available evidence. Standalone commentaries are considered; those responding to a published article must be submitted within two months of publication.',
   },
   {
     type: 'Letter to the Editor',
     words: '≤ 800',
-    abstract: 'None',
-    tables: 'Max 1',
-    figures: 'Max 1',
-    refs: 'Max 10',
     desc: 'Short letters responding to articles published in IJRHM within the preceding three months, or concise reports of novel observations of public health significance. No abstract or subheadings required. Authors of the original article may be invited to submit a letter in response.',
   },
   {
     type: 'Research Methodology',
     words: '2,000–3,000',
-    abstract: 'Structured (200 words)',
-    tables: 'Max 3',
-    figures: 'Max 4',
-    refs: 'Max 30',
     desc: 'Papers describing critical methodological aspects of health research — including statistical methods, study design, qualitative approaches, mixed methods, and systematic review methodology — that are of broad relevance to rural and global health researchers.',
   },
   {
     type: 'Editorial',
     words: '≤ 1,500',
-    abstract: 'None',
-    tables: 'None',
-    figures: 'Max 1',
-    refs: 'Max 15',
     desc: 'By invitation from the Editor-in-Chief only. Editorials contextualise published research within the issue or address emerging priorities in rural health and medicine. Authors wishing to propose an editorial should contact the editorial office with a brief outline.',
   },
 ];
@@ -131,8 +103,7 @@ export default function AuthorGuidelinesPage() {
               'No Submission Fees · No APCs',
               'Double-Blind Peer Review',
               '21-Day First Decision Target',
-              'CC BY 4.0 Open Access',
-              'APA 7th Edition References',
+              'Vancouver Style References',
             ].map((tag) => (
               <span key={tag} className="text-xs font-ui bg-white/10 border border-white/20 text-white/80 px-3 py-1 rounded-full">
                 {tag}
@@ -202,7 +173,7 @@ export default function AuthorGuidelinesPage() {
                   Manuscripts requiring technical correction are returned to authors before entering
                   formal peer review. Manuscripts lacking originality, presenting major scientific
                   or methodological flaws, or falling outside IJRHM's scope may be declined at desk
-                  review without external review. Authors are encouraged to ensure that the blinded
+                  review. Authors are encouraged to ensure that the blinded
                   manuscript file contains no identifying information; manuscripts revealing author
                   identity may be returned at this stage.
                 </p>
@@ -234,8 +205,7 @@ export default function AuthorGuidelinesPage() {
                   Accepted manuscripts undergo copy-editing for grammar, punctuation, style, and
                   formatting. Page proofs are sent to the corresponding author and must be reviewed
                   and returned within <strong>three working days</strong>. The journal targets
-                  online publication within 15 days of final acceptance. Articles are published
-                  immediately as <em>Ahead of Print</em> upon acceptance under a CC BY 4.0 licence.
+                  online publication within 15 days of final acceptance.
                   All manuscripts undergo a final editorial review before publication; changes made
                   at this stage to correct grammar, style, or formatting do not require author approval.
                 </p>
@@ -315,7 +285,7 @@ export default function AuthorGuidelinesPage() {
                 <ul>
                   <li>Include page numbers at the bottom of every page and continuous line numbering throughout.</li>
                   <li>Use a spell-checker and proofread carefully before submission. IJRHM accepts manuscripts written in English (British or American spelling, applied consistently).</li>
-                  <li>Follow APA 7th edition for all references (author–date format in text; alphabetical reference list at end).</li>
+                  <li>Follow Vancouver style for references.</li>
                   <li>The article file submitted for review must be a <strong>clean file</strong> with no Track Changes or comments.</li>
                   <li>Revised manuscript files must highlight all changes in a contrasting colour. Revision submissions must include the authors' point-by-point response to reviewer comments in the mandatory tabulated format.</li>
                 </ul>
@@ -323,10 +293,10 @@ export default function AuthorGuidelinesPage() {
                 <h3>Submission</h3>
                 <p>
                   All manuscripts must be submitted by email to{' '}
-                  <a href="mailto:editor@ijrhm.amaltas.edu.in">editor@ijrhm.amaltas.edu.in</a>{' '}
+                  <a href="mailto:editor@ijrhm.com">editor@ijrhm.com</a>{' '}
                   or through the online submission form at <Link to="/submit">ijrhm.amaltas.edu.in/submit</Link>.
-                  Authors must ensure that all co-author contact details (email, affiliation,
-                  ORCID iD) are accurately provided at submission. All editorial correspondence
+                  Authors must ensure that all co-author contact details (email, affiliation)
+ are accurately provided at submission. All editorial correspondence
                   will be directed to the corresponding author only.
                 </p>
                 <p>
@@ -355,7 +325,7 @@ export default function AuthorGuidelinesPage() {
                   <li><strong>Title:</strong> Concise and informative; no longer than 150 characters including spaces.</li>
                   <li><strong>Running title:</strong> Maximum 60 characters.</li>
                   <li><strong>Keywords:</strong> 5–8 keywords from MeSH or a recognised controlled vocabulary.</li>
-                  <li><strong>Author details:</strong> Full names of all authors in order, with complete institutional affiliations. Do not include academic degrees. ORCID iDs are strongly recommended.</li>
+                  <li><strong>Author details:</strong> Full names of all authors in order, with complete institutional affiliations. Do not include academic degrees.</li>
                   <li><strong>Corresponding author:</strong> Full name, postal address, telephone number, and email address. This email must remain active for at least one year after publication.</li>
                   <li><strong>Manuscript particulars:</strong> Word count of abstract and main text separately (excluding references, tables, and legends); number of tables; number of figures; funding sources; ethics approval number and issuing body; clinical trial registration number and registry (if applicable); details of any prior conference presentation.</li>
                   <li><strong>Acknowledgements:</strong> Include on the title page only, not in the blinded file.</li>
@@ -366,9 +336,7 @@ export default function AuthorGuidelinesPage() {
                   All authors must provide a description of their contribution to the manuscript
                   across the following categories (as applicable): concept and design; literature
                   search; data acquisition; data analysis; statistical analysis; manuscript
-                  preparation; manuscript editing; manuscript review. One or more authors must
-                  be designated as <em>guarantor</em> — taking responsibility for the integrity
-                  of the work as a whole. Authors' contributions will be published with the article.
+                  preparation; manuscript editing; manuscript review.
                   Copyright is transferred to Amaltas University Press upon acceptance; a completed
                   copyright transfer form must be submitted within two weeks of acceptance.
                 </p>
@@ -403,10 +371,6 @@ export default function AuthorGuidelinesPage() {
                       <h3 className="font-semibold text-gray-900 text-sm">{a.type}</h3>
                       <div className="flex flex-wrap gap-2 text-xs font-ui">
                         <span className="bg-navy-50 text-navy-700 border border-navy-200 px-2 py-0.5 rounded-full font-mono">{a.words} words</span>
-                        <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{a.abstract}</span>
-                        <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{a.tables}</span>
-                        <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{a.figures}</span>
-                        <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{a.refs} refs</span>
                       </div>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed">{a.desc}</p>
@@ -479,13 +443,11 @@ export default function AuthorGuidelinesPage() {
               <SectionHead icon={MessageSquare} title="References" />
               <Prose>
                 <p>
-                  IJRHM uses <strong>APA 7th edition</strong> throughout. In-text citations follow
-                  the author–date format — e.g., (Singh &amp; Patel, 2023) or Singh and Patel (2023).
-                  The reference list must be arranged <strong>alphabetically</strong> by first
-                  author's surname at the end of the manuscript. Do not number references.
+                  IJRHM uses <strong>Vancouver style</strong> throughout. 
                 </p>
                 <p>
-                  Journal titles should be spelled out in full (not abbreviated). Avoid using
+                  Journal titles should be abbreviated according to the PubMed/Index Medicus style;
+                  spell the title out in full if unsure of the standard abbreviation. Avoid using
                   conference abstracts as references. Unpublished observations and personal
                   communications may be cited in the text only (not in the reference list),
                   with the source's written permission; personal communications must include the
@@ -494,55 +456,45 @@ export default function AuthorGuidelinesPage() {
 
                 <h3>Common Reference Formats</h3>
 
-                <p><strong>Standard Journal Article (1–20 authors — list all):</strong></p>
+                <p><strong>Articles in Journals</strong></p>
+                <ol>
+                  <li>
+                    <strong>Standard journal article (for up to six authors):</strong><br />
+                    Tiwari US, Aishwarya A, Gandhi S, Sisodia P. Angiostrongylus cantonensis in
+                    anterior chamber. Indian J Ophthalmol 2019;67:158-60.
+                  </li>
+                  <li>
+                    <strong>Standard journal article (for more than six authors):</strong> List the
+                    first six contributors followed by et al.<br />
+                    Roddy P, Goiri J, Flevaud L, Palma PP, Morote S, Lima N, et al. Field Evaluation
+                    of a Rapid Immunochromatographic Assay for Detection of Trypanosoma cruzi
+                    Infection by Use of Whole Blood. J Clin Microbiol. 2008;46:2022-7.
+                  </li>
+                  <li>
+                    <strong>Volume with supplement:</strong><br />
+                    Otranto D, Capelli G, Genchi C. Changing distribution patterns of canine vector
+                    borne diseases in Italy: leishmaniosis vs. dirofilariosis. Parasites &amp;
+                    Vectors 2009; Suppl 1:S2.
+                  </li>
+                </ol>
+
+                <p><strong>Books</strong></p>
+                <p><strong>Chapter in a book:</strong></p>
                 <blockquote>
-                  Singh, R. K., &amp; Patel, M. (2023). Climate variability and diarrhoeal disease
-                  burden in central India. <em>Journal of Rural Health, 39</em>(2), 412–421.
-                  https://doi.org/10.1111/jrh.12700
+                  Nesheim MC. Ascariasis and human nutrition. In: Crompton DWT, Nesheim MC,
+                  Pawlowski ZS, editors. Ascariasis and its prevention and control. London:
+                  Taylor and Francis; 1989. p. 87-100.
                 </blockquote>
 
-                <p><strong>Article with more than 20 authors — list the first 19, then … last author:</strong></p>
+                <p><strong>Electronic Sources as Reference</strong></p>
+                <p><strong>Journal article on the Internet:</strong></p>
                 <blockquote>
-                  Gupta, A., Sharma, P., Nair, R., Kumar, S., Mehta, V., Joshi, D., Rao, B.,
-                  Iyer, K., Banerjee, T., Pillai, M., Verma, N., Chandra, L., Das, P., Roy, A.,
-                  Sen, M., Bose, R., Mukherjee, A., Chatterjee, S., Ghosh, B., … Krishnan, T.
-                  (2022). Multidisciplinary determinants of child stunting in rural Maharashtra.
-                  <em>The Lancet Regional Health — Southeast Asia, 8</em>, 100089.
-                  https://doi.org/10.1016/j.lansea.2022.100089
+                  Parija SC, Khairnar K. Detection of excretory Entamoeba histolytica DNA in the
+                  urine, and detection of E. histolytica DNA and lectin antigen in the liver
+                  abscess pus for the diagnosis of amoebic liver abscess. BMC Microbiology 2007,
+                  7: 41. doi:10.1186/1471-2180-7-41. Available from:
+                  http://www.biomedcentral.com/1471-2180/7/41
                 </blockquote>
-
-                <p><strong>Book (single author):</strong></p>
-                <blockquote>
-                  Gupta, A. (2021). <em>Rural public health systems in South Asia</em>. Amaltas
-                  University Press.
-                </blockquote>
-
-                <p><strong>Edited book chapter:</strong></p>
-                <blockquote>
-                  Nair, P. R. (2022). Maternal nutrition and child outcomes in tribal communities.
-                  In S. Sharma &amp; R. Mehta (Eds.), <em>Health equity in India</em> (pp. 145–170).
-                  Oxford University Press.
-                </blockquote>
-
-                <p><strong>Government / Institutional Report:</strong></p>
-                <blockquote>
-                  Ministry of Health and Family Welfare. (2022). <em>National Family Health Survey
-                  (NFHS-5): India report</em>. Government of India.
-                  https://rchiips.org/nfhs/NFHS-5Reports/India.pdf
-                </blockquote>
-
-                <p><strong>Online journal article (include DOI or URL):</strong></p>
-                <blockquote>
-                  Reddy, S., &amp; Anand, P. (2023). Telemedicine adoption in rural Rajasthan:
-                  A mixed-methods study. <em>BMC Health Services Research, 23</em>(1), Article 214.
-                  https://doi.org/10.1186/s12913-023-09214-x
-                </blockquote>
-
-                <p>
-                  For additional reference types (newspaper articles, datasets, theses, preprints)
-                  refer to the APA 7th Publication Manual or the APA Style website
-                  (https://apastyle.apa.org).
-                </p>
               </Prose>
             </section>
 
@@ -805,19 +757,15 @@ export default function AuthorGuidelinesPage() {
               <Prose>
                 <p>
                   All articles published in IJRHM are made freely and permanently available online
-                  immediately upon publication under a{' '}
-                  <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>{' '}
-                  licence. This licence permits unrestricted use, distribution, reproduction, and
-                  adaptation in any medium or format, provided the original work is properly cited
-                  and the source journal acknowledged.
+                  immediately upon publication under an open-access licence.
                 </p>
-                <p>
-                  Unlike more restrictive open-access licences, CC BY 4.0 permits derivative works
+                {/* <p>
+                  Unlike more restrictive open-access licences, this licence permits derivative works
                   and commercial reuse, maximising the reach and impact of published research.
                   Authors retain copyright of their work. By submitting to IJRHM, authors grant
                   Amaltas University Press a non-exclusive, irrevocable, worldwide licence to
                   publish, distribute, and archive the article in perpetuity.
-                </p>
+                </p> */}
                 <p>
                   Publication costs are supported by Amaltas University Press through institutional
                   funding. This model ensures that high-quality rural health research is accessible
@@ -828,7 +776,7 @@ export default function AuthorGuidelinesPage() {
                   All authors are required to submit a completed digital copyright transfer form
                   within two weeks of acceptance. Proofs are provided to the corresponding author
                   before publication; no free printed reprints are provided, but authors may
-                  download and share the published PDF freely under the CC BY 4.0 licence.
+                  download and share the published PDF freely under the journal's open-access licence.
                 </p>
               </Prose>
             </section>
@@ -840,8 +788,8 @@ export default function AuthorGuidelinesPage() {
                 <p className="text-white/70 text-sm">
                   No fees. No barriers. Open to all authors worldwide.
                   Contact us at{' '}
-                  <a href="mailto:editor@ijrhm.amaltas.edu.in" className="text-gold-400 hover:text-gold-300 underline">
-                    editor@ijrhm.amaltas.edu.in
+                  <a href="mailto:editor@ijrhm.com" className="text-gold-400 hover:text-gold-300 underline">
+                    editor@ijrhm.com
                   </a>
                 </p>
               </div>

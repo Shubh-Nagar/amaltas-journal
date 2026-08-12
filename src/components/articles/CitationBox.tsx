@@ -5,12 +5,11 @@ import clsx from 'clsx';
 
 interface CitationBoxProps {
   citation: Citation;
-  doi: string;
 }
 
 type Format = 'apa' | 'mla' | 'chicago' | 'bibtex';
 
-export default function CitationBox({ citation, doi }: CitationBoxProps) {
+export default function CitationBox({ citation }: CitationBoxProps) {
   const [format, setFormat] = useState<Format>('apa');
   const [copied, setCopied] = useState(false);
 
@@ -29,17 +28,8 @@ export default function CitationBox({ citation, doi }: CitationBoxProps) {
 
   return (
     <div className="border border-navy-200 rounded-xl overflow-hidden">
-      <div className="bg-navy-50 px-4 py-3 flex items-center justify-between border-b border-navy-200">
+      <div className="bg-navy-50 px-4 py-3 border-b border-navy-200">
         <h3 className="font-ui text-sm font-semibold text-navy-800">Cite This Article</h3>
-        <a
-          href={`https://doi.org/${doi}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-ui text-xs text-navy-500 hover:text-navy-700 transition-colors"
-          aria-label="DOI link"
-        >
-          DOI: {doi}
-        </a>
       </div>
 
       {/* Format tabs */}

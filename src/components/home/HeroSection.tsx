@@ -33,8 +33,7 @@ export default function HeroSection() {
             {/* Subtitle / scope */}
             <p className="font-ui text-white/70 text-lg leading-relaxed mb-8 max-w-2xl animate-slide-up delay-200">
               A peer-reviewed, open-access quarterly journal publishing multidisciplinary
-              research at the intersection of public health, environmental science,
-              and social development.
+              research at the intersection of rural health and medicine
             </p>
 
             {/* CTAs */}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Mail, Globe } from 'lucide-react';
+import { ChevronRight, Mail, Globe, FileText } from 'lucide-react';
 import { editorialBoard } from '../data/editorialBoard';
 import { editorRoleLabel } from '../utils/helpers';
 import type { EditorRole, EditorialBoardMember } from '../types';
@@ -21,12 +21,6 @@ const ROLE_COLORS: Record<EditorRole, string> = {
   'national-editorial-committee': 'bg-gray-100 text-gray-700',
 };
 
-const FLAG: Record<string, string> = {
-  'India': '🇮🇳', 'United Kingdom': '🇬🇧', 'China': '🇨🇳', 'Brazil': '🇧🇷',
-  'Saudi Arabia': '🇸🇦', 'Germany': '🇩🇪', 'Japan': '🇯🇵', 'Nigeria': '🇳🇬',
-  'Switzerland': '🇨🇭', 'Singapore': '🇸🇬', 'USA': '🇺🇸', 'Australia': '🇦🇺',
-};
-
 function MemberCard({ member }: { member: EditorialBoardMember }) {
   const initials = member.name.split(' ').filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join('');
   const isLeader = member.role === 'editor-in-chief' || member.role === 'deputy-editor' || member.role === 'managing-editor';
@@ -42,9 +36,6 @@ function MemberCard({ member }: { member: EditorialBoardMember }) {
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-0.5">
             <h3 className="font-playfair text-base font-bold text-gray-900 leading-tight">{member.name}</h3>
-            {FLAG[member.country] && (
-              <span title={member.country} className="text-lg">{FLAG[member.country]}</span>
-            )}
           </div>
           {/* Qualification is hidden for all cards */}
           {/* {isLeader && <p className="text-xs text-gray-500 mb-1">{member.title}</p>} */}
@@ -74,8 +65,8 @@ function MemberCard({ member }: { member: EditorialBoardMember }) {
       */}
 
       {/* Contact */}
-      {(member.email || member.profileUrl) && (
-        <div className="px-5 pb-4 pt-2 border-t border-gray-100 flex gap-3">
+      {(member.email || member.profileUrl || member.cvUrl) && (
+        <div className="px-5 pb-4 pt-2 border-t border-gray-100 flex flex-wrap gap-3">
           {member.email && (
             <a
               href={`mailto:${member.email}`}
@@ -94,6 +85,17 @@ function MemberCard({ member }: { member: EditorialBoardMember }) {
             >
               <Globe className="w-3.5 h-3.5" />
               Profile
+            </a>
+          )}
+          {member.cvUrl && (
+            <a
+              href={member.cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-xs text-navy-600 hover:text-navy-800 hover:underline"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              CV Brief
             </a>
           )}
         </div>
@@ -129,16 +131,16 @@ export default function EditorialBoardPage() {
           <h1 className="font-playfair text-3xl sm:text-4xl mb-3">Editorial Board</h1>
           <p className="text-white/75 max-w-2xl">
             IJRHM is guided by an international team of {editorialBoard.length} distinguished scholars
-            across {countries.length} countries, committed to rigorous and equitable peer review.
+            across countries, committed to rigorous and equitable peer review.
           </p>
           {/* Country flags strip */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          {/* <div className="flex flex-wrap gap-2 mt-4">
             {countries.map((c) => FLAG[c] ? (
               <span key={c} title={c} className="text-xl">{FLAG[c]}</span>
             ) : (
               <span key={c} className="text-xs text-white/70 bg-white/15 px-2 py-0.5 rounded">{c}</span>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 

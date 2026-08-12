@@ -107,6 +107,7 @@ export interface EditorialBoardMember {
   expertise: string[];
   email?: string;
   profileUrl?: string;
+  cvUrl?: string;
 }
 
 export interface JournalMetric {

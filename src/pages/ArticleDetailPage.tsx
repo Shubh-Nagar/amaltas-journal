@@ -2,11 +2,11 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import {
   ArrowLeft, Download, Share2, BookOpen, Calendar,
-  Eye, Quote, Tag, User, ExternalLink, Globe, FileText,
-  ChevronRight, BookMarked, Hash,
+  Eye, Quote, Tag, User, Globe, FileText,
+  ChevronRight, BookMarked,
 } from 'lucide-react';
 import { getArticleById, articles } from '../data/articles';
-import { buildDOIUrl, formatDate, articleTypeLabel, articleTypeBadgeClass } from '../utils/helpers';
+import { formatDate, articleTypeLabel, articleTypeBadgeClass } from '../utils/helpers';
 import CitationBox from '../components/articles/CitationBox';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
@@ -152,16 +152,6 @@ export default function ArticleDetailPage() {
                 <Quote className="w-4 h-4 text-navy-400" />
                 {article.citationCount} citations
               </span>
-              <a
-                href={buildDOIUrl(article.doi)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-navy-600 hover:text-navy-800 hover:underline font-mono text-xs"
-              >
-                <Hash className="w-3.5 h-3.5" />
-                {article.doi}
-                <ExternalLink className="w-3 h-3" />
-              </a>
             </div>
 
             {/* Abstract */}
@@ -282,7 +272,7 @@ export default function ArticleDetailPage() {
                 <span className="block w-1 h-6 bg-gold-400 rounded-full" />
                 Cite This Article
               </h2>
-              <CitationBox citation={article.citation} doi={article.doi} />
+              <CitationBox citation={article.citation} />
             </section>
 
             {/* Disclaimer note */}
@@ -291,10 +281,6 @@ export default function ArticleDetailPage() {
                 <strong className="text-navy-800">Peer Review Statement:</strong>{' '}
                 This article underwent double-blind peer review by a minimum of two independent experts. Received:{' '}
                 <span className="font-medium">{formatDate(article.publishedDate)}</span>. Accepted after revision.
-                Published under{' '}
-                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-navy-700 underline">
-                  CC BY 4.0
-                </a>.
               </p>
             </div>
 

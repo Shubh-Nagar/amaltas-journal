@@ -31,7 +31,7 @@ export default function ArchivesPage() {
             Issues &amp; Archives
           </h1>
           <p className="font-ui text-white/70 mt-3 max-w-2xl">
-            Browse all published volumes and issues of the International Journal of Rural Health and Medicine (IJRHM) (ISSN 2582-7352) since 2011.
+            Browse all published volumes and issues of the International Journal of Rural Health and Medicine (IJRHM) since 2026.
           </p>
         </div>
       </div>
@@ -160,7 +160,6 @@ export default function ArchivesPage() {
                                 <FileText size={11} aria-hidden="true" />
                                 pp. {article.pageStart}–{article.pageEnd}
                               </span>
-                              <span>DOI: {article.doi}</span>
                               <span>{article.viewCount.toLocaleString()} views</span>
                               <span>{article.citationCount} citations</span>
                             </div>

@@ -50,7 +50,7 @@ export default function LatestIssueSection() {
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-display text-xl text-gray-900 font-semibold">
-                Articles in This Issue
+                Articles in this issue
               </h3>
               <span className="font-ui text-sm text-navy-700">{issueArticles.length} articles</span>
             </div>

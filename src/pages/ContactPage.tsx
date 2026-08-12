@@ -17,7 +17,7 @@ const CONTACTS = [
   {
     role: 'Editor-in-Chief',
     name: 'Dr. Salil Bhargava',
-    subtitle: 'MD, PhD, FAMS',
+    subtitle: 'MD, DNB (Respiratory diseases)',
     email: 'editor@ijrhm.com',
     note: 'For editorial escalations and senior correspondence only.',
     icon: BookOpen,

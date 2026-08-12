@@ -58,10 +58,6 @@ export function truncateText(text: string, maxLength: number): string {
   return text.slice(0, maxLength).trimEnd() + '…';
 }
 
-export function buildDOIUrl(doi: string): string {
-  return `https://doi.org/${doi}`;
-}
-
 export function formatAuthors(names: string[], maxShown = 3): string {
   if (names.length <= maxShown) return names.join(', ');
   return `${names.slice(0, maxShown).join(', ')} et al.`;

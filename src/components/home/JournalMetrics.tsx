@@ -3,7 +3,7 @@ const metrics = [
   { label: 'CiteScore', value: '4.1', sub: 'Scopus 2024', color: 'text-navy-800' },
   { label: 'H-Index', value: '24', sub: 'All time', color: 'text-navy-800' },
   { label: 'Acceptance Rate', value: '18%', sub: 'Peer-reviewed', color: 'text-navy-800' },
-  { label: 'Articles Published', value: '847+', sub: 'Since 2011', color: 'text-navy-800' },
+  { label: 'Articles Published', value: '847+', sub: 'Since 2026', color: 'text-navy-800' },
   { label: 'Time to First Decision', value: '21 days', sub: 'Avg. 2024', color: 'text-navy-800' },
 ];
 
